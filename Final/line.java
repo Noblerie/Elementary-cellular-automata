@@ -2,7 +2,6 @@ package Final;
 
 public class line {
     private String _currentLine;
-    private String _newLine;
     private int[] _status;
 
     line(String currentLine, int[] status) {
@@ -22,15 +21,13 @@ public class line {
             }
         }
         
-        return this._newLine = sb.toString();
+        return sb.toString();
     }
 
     public char squareBlack(int i, int length, char[] split) {
         int before;
         int now = split[i];
         int after;
-        //System.out.println(split[i + 1]);
-        //System.out.println(i);
 
         if (i == 0) {
             before = 0;    

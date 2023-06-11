@@ -12,9 +12,6 @@ public class rule {
     rule(String filepath) throws IOException {
         this._status = new int[8];
         getFileData(filepath);
-        //"/home/jaajeur/Documents/Binus/OOP/rules.save"
-        //Character.toString(11035)
-        //Character.toString(11036)
         setRules();
     }
 
@@ -25,10 +22,8 @@ public class rule {
 
         byte Bytes[] = new byte[fileLength];
 
-        //System.out.println("File size is: " + inFile.read(Bytes));
         inFile.read(Bytes);
         String file1 = new String(Bytes);
-        //System.out.println("File content is:\n" + file1);
         this._data = file1;
         inFile.close();
     }
@@ -39,19 +34,15 @@ public class rule {
  
         String[] Split2 = Split[1].split("\n");
         this._fl = Split2[0];
-        //System.out.println(this._fl);
         
         Split2 = Split[2].split("\n");
         this._loop = Integer.parseInt(Split2[0]);
-        //System.out.println(this._loop);
 
         for (int i=3; i < Split.length; i++){
             Split2 = Split[i].split("\n");
             this._status[y] = Integer.parseInt(Split2[0]);
-            //System.out.println(this._status[y]);
             y++;
         }
-        //System.out.println(Arrays.toString(this._status));
     }
 
     public String getFirstline() {
